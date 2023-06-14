@@ -19,17 +19,7 @@ public class PlayerControl : MonoBehaviour
     private bool ground = false;
     private float groundRadius = 0.5f;
 
-    public int score;
-    public TextMeshProUGUI scoreT;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
     void Update()
     {
         ground = Physics2D.OverlapCircle(groundcheck.position, groundRadius, groundMask);
@@ -53,8 +43,7 @@ public class PlayerControl : MonoBehaviour
         }
         if (collision.tag == "Score")
         {
-            score++;
-            scoreT.text = score.ToString();
+            ScoreManager.score += 1;
         }
     }
 
