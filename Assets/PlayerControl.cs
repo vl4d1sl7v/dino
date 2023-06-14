@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class PlayerControl : MonoBehaviour
     private float groundRadius = 0.5f;
 
     public int score;
-    public Text scoreT;
+    public TextMeshProUGUI scoreT;
 
 
 
@@ -50,11 +51,11 @@ public class PlayerControl : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
-        //if (collision.tag == "Score")
-        //{
-        //    score++;
-        //    scoreT.text = score.ToString();
-        //}
+        if (collision.tag == "Score")
+        {
+            score++;
+            scoreT.text = score.ToString();
+        }
     }
 
 
